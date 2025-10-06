@@ -2,6 +2,8 @@
 
 This is a self-service web application for conducting an Azure architecture review using a standardized set of 20 best-practice questions. The app helps architects, engineers, and teams assess their Azure solutions for resilience, scalability, security, and operational excellence.
 
+Try it out here: https://nice-sky-09ce44610.2.azurestaticapps.net/
+
 ## Features
 
 - **Step-by-step review:** Answer 20 architecture questions, each with selectable implementation status and a comment box.
