@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Azure Architecture Review Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a self-service web application for conducting an Azure architecture review using a standardized set of 20 best-practice questions. The app helps architects, engineers, and teams assess their Azure solutions for resilience, scalability, security, and operational excellence.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Step-by-step review:** Answer 20 architecture questions, each with selectable implementation status and a comment box.
+- **Sidebar navigation:** Jump to any question at any time.
+- **Automated scoring:** Each answer is scored; your total score is calculated and shown at the end.
+- **Actionable summary:** The summary table is color-coded by score and sorted to highlight areas needing improvement, with recommended actions and direct links to Azure documentation.
+- **Excel export:** Download your results as a color-coded Excel file (with a timestamped filename).
+- **Restart option:** Easily restart the review from the summary page.
 
-### `npm start`
+## How to Run Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/somecloudguy/azure-architecture-review.git
+   cd azure-architecture-review
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### `npm test`
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+   The app will open at http://localhost:3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Deploy as an Azure Static Web App
 
-### `npm run build`
+1. **Push your code to GitHub** (if not already done).
+2. **Go to the https://portal.azure.com/** and create a new Static Web App:
+   - Select your GitHub repo and branch.
+   - Choose the React build preset.
+   - Set `App location` to `/` and `Output location` to `build`.
+3. **Azure will automatically build and deploy your app.**
+4. **Access your app** at the provided Azure Static Web Apps URL.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- sheetjs-style (for Excel export with color coding)
+- Azure Static Web Apps (for deployment)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Customization
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- To change the questions, edit `src/questions.js`.
+- To adjust scoring or color coding, edit `src/App.js` and `src/excelExport.js`.
